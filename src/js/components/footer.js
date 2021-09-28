@@ -6,7 +6,7 @@ export default class Footer {
     getFooterContent () {
     	return `
     		<div>
-    			ver. 0.0.1 | source GitHub | dev by <a href='' target="_blank">Alexander Chachillo</a>
+    			ver. 0.0.1 | source <a href="https://github.com/cheello/ndv-exchange-rate" target="_blank">GitHub</a> | dev by <a href='' target="_blank">Alexander Chachillo</a>
     		</div>
     	`
     }
