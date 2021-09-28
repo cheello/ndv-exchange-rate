@@ -12,8 +12,6 @@ export default class Exchange {
     	this.valuteOut = this.valuteOutputDefault
     	this.valuteNominalOut = 1
     	this.valuteInputIn = 1
-
-    	console.log(this.dataValute)
     }
 
     getPageHeadline () {
@@ -37,7 +35,6 @@ export default class Exchange {
     getSelector(defaultValute, id) {
       return `<select class="exchange-select" id="${id}">
 	    		${Object.keys(this.dataValute).map(key => {
-	    			console.log(key)
 		    	  return this.getOption(key, defaultValute);
 		    	}).join('')}
 		    	</select>`;
@@ -104,9 +101,6 @@ export default class Exchange {
     	this.valuteNameIn = this.dataValute[this.valuteIn].Name
     	this.valuteNominalIn = this.dataValute[this.valuteIn].Nominal
 
-    	console.log(this.valuteNominalIn)
-
-    	// inputValuteIn.placeholder = this.valuteNominalIn
     	captionValuteIn.innerHTML = this.valuteNameIn
 
     	this.calculate()
@@ -115,10 +109,8 @@ export default class Exchange {
     changeValuteOut (e) {
     	this.valuteOut = e.target.value
 
-
     	this.valuteNameOut = this.dataValute[this.valuteOut].Name
     	this.valuteNominalOut = this.dataValute[this.valuteOut].Nominal
-    	console.log(this.valuteNameOut)
 
     	captionValuteOut.innerHTML = this.valuteNameOut
 
@@ -133,7 +125,7 @@ export default class Exchange {
 
     calculate () {
     	let result = this.dataValute[this.valuteIn].Value / this.valuteNominalIn * this.valuteInputIn  / this.dataValute[this.valuteOut].Value / this.valuteNominalOut
-    	console.log(result)
+
     	result = result.toFixed(2)
 
     	inputValuteOut.value = result

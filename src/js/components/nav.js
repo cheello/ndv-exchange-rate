@@ -13,7 +13,6 @@ export default class Nav {
     }
 
     getNavItem (pathname, title) {
-        console.log(pathname, title)
         if (app.pathname === pathname) {
             return `
                 <div onClick="window.app.navigation('${pathname}')"  class="nav-item nav-item-active">${title}</div>
@@ -27,13 +26,5 @@ export default class Nav {
 
     render () {
   		nav.innerHTML = this.getNavBar();
-    }
-
-    navUpdate () {
-        this.links.forEach((el) => {
-            if (true) {}
-            console.log(el)
-
-        })
     }
 }
