@@ -14,29 +14,7 @@ class App {
       '/' : 'Курс валют',
       '/exchange' : 'Конвертер валют'
     };
-
-    // window.onpopstate = () => {
-    //   app.innerHTML = routes[window.location.pathname]
-    // }
   }
-
-  render () {
-
-  }
-
-  // const nav = `<a href="/#/">Home</a> | 
-  //              <a href="/#/about">About</a> | 
-  //              <a href="/#/contact">Contact</a>`;
-  // const routes = {
-  //   "": `<h1>Home</h1>${nav}<p>Welcome home!</p>`,
-  //   "about": `<h1>About</h1>${nav}<p>This is a tiny SPA</p>`,
-  // };
-  // const render = path => {
-  //   document.querySelector("#app")
-  //     .innerHTML = routes[path.replace(/^#\//, "")] || `<h1>404</h1>${nav}`;
-  // };
-  // window.onhashchange = evt => render(window.location.hash);
-  // render(window.location.hash);
 
   navigation (pathname) {
     this.pathname = pathname
@@ -62,8 +40,9 @@ class App {
   init () {
     fetch('https://www.cbr-xml-daily.ru/daily_json.js', (data) => {
       this.data = data
+      this.exchangeData = JSON.parse(JSON.stringify(this.data));
       this.homePage = new Home(this.data)
-      this.exchangePage = new Exchange(this.data)
+      this.exchangePage = new Exchange(this.exchangeData)
       this.nav = new Nav()
       this.footer = new Footer()
 

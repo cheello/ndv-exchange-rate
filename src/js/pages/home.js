@@ -1,6 +1,6 @@
 export default class Home {
     constructor (data) {
-    	this.dataValute = data.Valute
+    	this.dataValute = data.Valute;
     	this.favouritesValute = {}
     	this.pageHeadline = 'Курс валют ЦБ РФ на сегодня'
     	this.clickListener = this.favouritesClickListener.bind(this)
@@ -48,8 +48,6 @@ export default class Home {
 			    	}).join('')}
 		    	</div>`
     	}
-
-    	
     }
 
     getHeadTable () {
@@ -65,6 +63,7 @@ export default class Home {
     }
 
     getTableRows (item, favourite) {
+
     	let difference = parseFloat(item.Previous) - parseFloat(item.Value)
     	let percents = parseFloat(item.Value) / parseFloat(item.Previous) * 100 - 100 
     	difference = difference.toFixed(4)
@@ -130,7 +129,10 @@ export default class Home {
     	if (this.favourites.length === 0) this.addFavouritesButton()
 
     	this.favourites.push(charCode)
-  		
+
+			this.favouritesValute[charCode] = this.dataValute[charCode]   
+			delete this.dataValute[charCode] 		
+	
   		this.updateFavouritesButtonCount()
 
     	this.setFavouritesInLocalStorage()
@@ -142,6 +144,9 @@ export default class Home {
     removeFavorite (item, charCode) {
     	const positionInArray = this.favourites.indexOf(charCode)
     	this.favourites.splice(positionInArray, 1)
+
+    	this.dataValute[charCode] = this.favouritesValute[charCode]   
+    	delete this.favouritesValute[charCode] 	
 
     	if (this.favourites.length === 0) {
     		this.removeFavouritesButton()

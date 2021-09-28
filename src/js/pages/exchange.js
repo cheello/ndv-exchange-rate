@@ -1,7 +1,7 @@
 export default class Exchange {
-    constructor (data) {
+    constructor (exchangeData) {
     	this.pageHeadline = 'Конвертер валют'
-    	this.dataValute = Object.assign({}, data.Valute);
+    	this.dataValute = exchangeData.Valute
     	this.dataValute.RUR = {Nominal: 1, Value: 1, Name: 'Рубль РФ'}
     	this.valuteInputDefault = 'USD'
     	this.valuteOutputDefault = 'RUR'
@@ -144,7 +144,7 @@ export default class Exchange {
     }
 
     removeListeners () {
-    	// main.removeEventListener('click', this.clickListener)
+    	//TODO : remove listeners
     }
 
 }
