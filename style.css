@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.25;
+  padding: 20px;
+  color: #333;
+  max-width: 800px;
+  min-width: 540px;
+  margin: auto;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#nav {
+  display: flex;
+  font-size: 14px;
+}
+
+#footer {
+  margin-top: auto;
+  padding-top: 40px;
+  opacity: 0.5;
+  font-size: 12px;
+  text-align: center;
+}
+
+.nav-item {
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.2);
+
+}
+
+.nav-item:hover {
+  background: #000;
+  color: #fff;
+}
+
+.nav-item-active {
+  cursor: auto;
+  background: #000;
+  color: #fff;
+}
+
+.nav-item:last-child {
+  margin-right: 0px;
+}
+
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.table {
+  font-size: 15px;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.table-row.table-head {
+  padding-top: 0;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+.table-col-1 {
+  width: 10%;
+}
+
+.table-col-2 {
+  width: 10%;
+}
+
+.table-col-3 {
+  width: 57.5%;
+}
+
+.table-col-4 {
+  width: 12.5%;
+
+}
+
+.table-col-5 {
+  width: 10%;
+}
+
+.table-item-char {
+  font-weight: 600;
+}
+
+.table-item-nominal {
+  opacity: 0.5;
+}
+
+.table-item-value {
+  display: flex;
+  align-items: flex-end;
+}
+
+.table-item-favourites {
+  text-align: right;
+}
+
+.table-row:hover .favourites-icon:hover {
+  opacity: 1;
+}
+
+.table-row-favourite .favourites-icon {
+  fill: #32afff;
+  color: #32afff;
+  opacity: 1 !important;
+}
+
+.value-difference {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.green {
+  color: #009e00;
+}
+
+.red {
+  color: #dd0000;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.favourites-icon {
+  color: #32afff;
+  transition: 200ms;
+  cursor:  pointer;
+  opacity: 0.5;
+  width: 22px;
+  height: 22px;
+}
+
+.favourite-icon {
+  fill: #32afff;
+  color: #32afff;
+  transition: 200ms;
+  cursor:  pointer;
+  width: 22px;
+  height: 22px;
+}
+
+.difference-icon {
+  transition: 200ms;
+  cursor:  pointer;
+  opacity: 0.5;
+  width: 22px;
+  height: 22px;
+}
+
+.favourites-button {
+  background: #fff;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  border: 1px #32afff solid;
+  border-radius: 500px;
+  box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.2);
+  transition: 200ms;
+}
+
+.favourites-button:hover {
+  transform: rotateZ(5deg) scale(1.1);
+}
+
+.favourites-count {
+  font-weight: 600;
+  display: flex;
+  height: 18px;
+  width: 18px;
+  color: #fff;
+  font-size: 10px;
+  background: #dd0000;
+  border-radius: 500px;
+  position: absolute;
+  margin-bottom: 1px;
+  right: -4px;
+  top: -4px;
+}
+
+
+.favourites-count-num {
+  margin: auto;
+}
+
+.favourites-button .favourites-icon {
+  fill: #32afff;
+  color: #32afff;
+  opacity: 1 !important;
+}
+
+.exchange {
+  display: flex;
+  align-items: center;
+}
+
+.exchange-row {
+  display: flex;
+  position: relative;
+}
+
+.exchange-middle {
+  padding: 0 20px;
+  margin: auto;
+}
+
+.exchange-input {
+  max-width: 250px;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+.exchange-select {
+  padding: 5px;
+
+  border: 1px solid rgba(0,0,0,0.5);
+}
+
+.text-extra {
+  font-size: 40px;
+}
+
+.exchange-caption {
+  position: absolute;
+  bottom: -25px;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+
+
+
